@@ -192,6 +192,15 @@
             color: var(--link-color);
             margin-right: 8px;
         }
+
+        .player-controls {
+            margin-top: 20px;
+        }
+
+        .player-controls h5 {
+            color: var(--accent);
+            margin: 0 0 10px 0;
+        }
     </style>
 </head>
 <body>
@@ -239,16 +248,22 @@
             <div class="controls-grid">
                 <div class="control-group">
                     <h4>Game Controls</h4>
-                    <ul>
-                        <li><strong>Player 1:</strong></li>
-                        <li><strong>WASD</strong> - Movement</li>
-                        <li><strong>Q/E</strong> - Rotate</li>
-                        <li><strong>Space</strong> - Shoot</li>
-                        <li><strong>Player 2:</strong></li>
-                        <li><strong>Arrow Keys</strong> - Movement</li>
-                        <li><strong>/ and Right Shift</strong> - Rotate</li>
-                        <li><strong>.</strong> - Shoot</li>
-                    </ul>
+                    <div class="player-controls player1">
+                        <h5 style="color: #bb86fc; margin: 0 0 10px 0;">Player 1</h5>
+                        <ul>
+                            <li><strong>WASD</strong> - Movement</li>
+                            <li><strong>Q/E</strong> - Rotate</li>
+                            <li><strong>Space</strong> - Shoot</li>
+                        </ul>
+                    </div>
+                    <div class="player-controls player2" style="margin-top: 20px;">
+                        <h5 style="color: #03dac6; margin: 0 0 10px 0;">Player 2</h5>
+                        <ul>
+                            <li><strong>Arrow Keys</strong> - Movement</li>
+                            <li><strong>/ and Right Shift</strong> - Rotate</li>
+                            <li><strong>.</strong> - Shoot</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="control-group">
                     <h4>Tile Editor Controls</h4>
