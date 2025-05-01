@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <title>Super Awesome Game Engine</title>
+    <style>
+        :root[data-theme="dark"] {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --accent: #bb86fc;
+            --link-color: #03dac6;
+            --border: #333333;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .container {
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px var(--shadow);
+        }
+
+        h1, h2 {
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .screenshots figure {
+            margin: 0;
+            background: var(--bg-secondary);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .screenshots img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .screenshot-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .screenshot-gallery img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            padding: 12px 24px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+
+        .architecture-img {
+            max-width: 720px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>D Super Awesome Game Engine</h1>
+        
+        <div class="demo-section">
+            <h2>Demo Video</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/cEe2jWe_Xoc?si=l7VRorVCrjss6A7x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <h2>Screenshots</h2>
+        <div class="screenshots">
+            <figure>
+                <img src="assets/screenshots/screenshot1.jpeg" alt="Tile Editor Interface">
+            </figure>
+            
+            <figure>
+                <img src="assets/screenshots/screenshot2.jpeg" alt="Game Screenshot">
+            </figure>
+            
+            <figure>
+                <img src="assets/screenshots/screenshot3.jpeg" alt="Additional Feature">
+            </figure>
+        </div>
+
+        <h2>Engine Architecture</h2>
+        <img src="assets/images/game_architecture_newest.png" alt="Engine Architecture Diagram" class="architecture-img">
+        
+        <div class="documentation-section">
+            <h2>Documentation</h2>
+            <p>View the complete <a href="api/html/index.html">API Documentation</a></p>
+        </div>
+
+        <h2>Download</h2>
+        <a href="downloads/game-engine.zip" class="download-btn">Download Game Engine (Windows/Linux/Mac)</a>
+
+        <h2>Post-Mortem</h2>
+        <p>
+            The final list of grievances for this project is quite long so we will try to explain them as best as possible. To begin, a major functionality of the engine, which was meant to be the coolest part, was never implemented. The ability to select which script (or game) is run on a specific map was intended to exist. For example, when making a map in the editor, pressing space would open a menu of available options from the directory, and choosing an option would attempt to load the map under that game (assuming the map met the conditions for the game). In the end, this ended up being way too difficult of a feature to implement in the time period due to both having to create a new game to test, and creating a window to select the options. Additionally, this would require a lot of change in the app.d file, which has certain aspects hardcoded to run the shootout.d file. Honestly, this would be very doable given an extra week or so, but we digress.
+        </p>
+        <p>
+            Furthermore, the ability to import sprites using the game engine editor itself was never added. Any sprites the user would want to add or use would have to be added to app.d itself. This feature would also be very approachable, it would’ve just taken time we didn’t have to create the UI, link everything, check the assets folder, and potentially redo the resource manager and spritesheet. The other issue potentially would’ve been that adding more sprites and tile types might conflict with the nature of the engine, which is that you can create a tileset which can be used for many different games. The more sprites you add, the more hardcoded checks you’d have to make to see if a map is compatible with a certain game. For example, if a map contains sprites or tiles which aren’t accounted for in a game, it effectively fails to function in that game. we don’t believe there’s any good solution to this, as that hardcode needs to be handled on the game side, not the engine side, so effectively is not a problem of the engine. Perhaps if we had more time to work on this project, we would’ve attempted to find a more ergonomic way to go about this.
+        </p>
+        <p>
+            Finally, the actual implementation of gameobjects, scenes, cells, players, and projectiles are overly simple, seeing as they only serve to create shootout.d. If we had more time, we would’ve expanded the functionalities of these classes to account for more potential game types. Giving them more attributes would allow for greater utility of their uses, and if a game was made that had no use for a certain attribute of the gameobjects then that hopefully would just be ignored with no issue. This issue goes in hand with the game, shootout.d, itself not being very fleshed out. It’s very simple and runs poorly. If we had more time we would’ve focused more on making the different tile types usable in shootout.d, and added more interactable sprites or items to make the game more interesting. We also would’ve spent more time making the game run smoothly and be more intuitive to control and play.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "name": "prog_sdl",
+  "description": "A minimal D application.",
+  "authors": ["mike"],
+  "license": "proprietary",
+
+  "dependencies": {
+    "bindbc-sdl": "~>2.1.0"
+  },
+  "subConfigurations": {
+    "bindbc-sdl": "dynamic"
+  },
+  "libs": [
+    "SDL2_mixer"
+  ],
+  "versions": [
+    "SDL_2_20",
+    "SDL_Mixer_204",
+    "SDL_Image",
+    "SDL_TTF"
+  ],
+  "configurations": [
+    {
+      "name": "editor",
+      "targetType": "executable",
+      "targetName": "tileeditor",
+      "mainSourceFile": "src/app.d",
+      "sourceFiles": [
+        "src/app.d",
+        "src/spritesheet.d",
+	"src/resourcemanager.d",
+      ]
+    },
+    {
+      "name": "game",
+      "targetType": "executable",
+      "targetName": "shootout",
+      "mainSourceFile": "src/shootoutmain.d",
+      "sourceFiles": [
+        "src/shootout.d",
+        "src/spritesheet.d",
+	"src/common.d",
+	"src/gameobject.d",
+	"src/cell.d",
+	"src/player.d",
+	"src/projectile.d",
+	"src/gamescene.d",
+      ]
+    },
+    {
+      "name": "allrounds",
+      "targetType": "executable",
+      "targetName": "allrounds",
+      "mainSourceFile": "src/testrun.d",
+      "sourceFiles": [
+        "src/testrun.d",
+        "src/shootout.d",
+        "src/spritesheet.d",
+        "src/common.d",
+        "src/gameobject.d",
+        "src/cell.d",
+        "src/player.d",
+        "src/projectile.d",
+        "src/gamescene.d"
+      ]
+    }
+  ]
+}
